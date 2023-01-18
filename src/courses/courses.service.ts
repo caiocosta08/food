@@ -51,10 +51,12 @@ export class CoursesService {
     return { course, modules, lessons };
   }
 
-  async updateCourse(id: string, userUpdates: UpdateCourseDto) {
-    return this.coursesRepository.Update(id, userUpdates).catch((error) => {
-      throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
-    });
+  async updateCourse(userUpdates: UpdateCourseDto) {
+    return this.coursesRepository
+      .Update(userUpdates._id, userUpdates)
+      .catch((error) => {
+        throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
+      });
   }
 
   async deleteCourse(id: string): Promise<Course> {

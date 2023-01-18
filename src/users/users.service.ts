@@ -25,10 +25,12 @@ export class UsersService {
     });
   }
 
-  async updateUser(id: string, userUpdates: UpdateUserDto) {
-    return this.usersRepository.Update(id, userUpdates).catch((error) => {
-      throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
-    });
+  async updateUser(userUpdates: UpdateUserDto) {
+    return this.usersRepository
+      .Update(userUpdates._id, userUpdates)
+      .catch((error) => {
+        throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
+      });
   }
 
   async deleteUser(id: string): Promise<User> {

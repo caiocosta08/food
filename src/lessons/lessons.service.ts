@@ -1,7 +1,7 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
-import { Lesson } from "./schema/lessons.schema";
-import { CreateLessonDto, UpdateLessonDto } from "./dto/lesson.dto";
-import { LessonsRepository } from "./lessons.repository";
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Lesson } from './schema/lessons.schema';
+import { CreateLessonDto, UpdateLessonDto } from './dto/lesson.dto';
+import { LessonsRepository } from './lessons.repository';
 
 @Injectable()
 export class LessonsService {
@@ -25,10 +25,12 @@ export class LessonsService {
     });
   }
 
-  async updateLesson(id: string, lessonUpdates: UpdateLessonDto) {
-    return this.lessonsRepository.Update(id, lessonUpdates).catch((error) => {
-      throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
-    });
+  async updateLesson(lessonUpdates: UpdateLessonDto) {
+    return this.lessonsRepository
+      .Update(lessonUpdates._id, lessonUpdates)
+      .catch((error) => {
+        throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
+      });
   }
 
   async deleteLesson(id: string): Promise<Lesson> {

@@ -34,12 +34,9 @@ export class CourseModuleService {
     });
   }
 
-  async updateCourseModule(
-    id: string,
-    courseModuleUpdates: UpdateCourseModuleDto,
-  ) {
+  async updateCourseModule(courseModuleUpdates: UpdateCourseModuleDto) {
     return this.courseModuleRepository
-      .Update(id, courseModuleUpdates)
+      .Update(courseModuleUpdates._id, courseModuleUpdates)
       .catch((error) => {
         throw new HttpException({ error }, HttpStatus.BAD_REQUEST);
       });

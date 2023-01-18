@@ -33,12 +33,11 @@ export class CourseModuleController {
     return this.courseModuleService.findById(id);
   }
 
-  @Put(':id')
+  @Put()
   async updateCourseModule(
-    @Param('id') id: string,
     @Body() updateCourseModule: UpdateCourseModuleDto,
   ): Promise<CourseModule> {
-    return this.courseModuleService.updateCourseModule(id, updateCourseModule);
+    return this.courseModuleService.updateCourseModule(updateCourseModule);
   }
   @Delete(':id')
   async deleteCourseModule(@Param('id') id: string): Promise<CourseModule> {

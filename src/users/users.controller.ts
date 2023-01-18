@@ -30,12 +30,9 @@ export class UsersController {
     return this.usersService.findById(id);
   }
 
-  @Put(':id')
-  async updateUser(
-    @Param('id') id: string,
-    @Body() updateUser: UpdateUserDto,
-  ): Promise<User> {
-    return this.usersService.updateUser(id, updateUser);
+  @Put()
+  async updateUser(@Body() updateUser: UpdateUserDto): Promise<User> {
+    return this.usersService.updateUser(updateUser);
   }
 
   @Delete(':id')

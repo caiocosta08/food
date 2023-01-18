@@ -6,6 +6,7 @@ export class CreateLessonDto {
 }
 
 export class UpdateLessonDto {
+  _id: string;
   title: string;
   course_id: string;
   module_id: string;

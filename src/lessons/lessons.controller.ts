@@ -30,12 +30,9 @@ export class LessonsController {
     return this.lessonsService.findById(id);
   }
 
-  @Put(':id')
-  async updateUser(
-    @Param('id') id: string,
-    @Body() updateLesson: UpdateLessonDto,
-  ): Promise<Lesson> {
-    return this.lessonsService.updateLesson(id, updateLesson);
+  @Put()
+  async updateUser(@Body() updateLesson: UpdateLessonDto): Promise<Lesson> {
+    return this.lessonsService.updateLesson(updateLesson);
   }
 
   @Delete(':id')
