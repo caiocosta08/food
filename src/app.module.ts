@@ -10,6 +10,8 @@ import { CoursesModule } from './courses/courses.module';
 import { CourseModules_Module } from './course_modules/course_module.module';
 import { LessonsModule } from './lessons/lessons.module';
 import { UsersModule } from './users/users.module';
+import { OrdersModule } from './orders/orders.module';
+import { EventsModule } from './events/events.module';
 dotenv.config();
 
 @Module({
@@ -22,6 +24,8 @@ dotenv.config();
     CourseModules_Module,
     LessonsModule,
     UsersModule,
+    OrdersModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
