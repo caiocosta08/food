@@ -40,7 +40,6 @@ export class OrdersRepository {
 
   async Delete(id: string) {
     const deletar = this.OrderModel.findByIdAndDelete({ _id: id }).exec();
-
     return (await deletar).remove();
   }
 }

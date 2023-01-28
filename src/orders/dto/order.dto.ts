@@ -1,7 +1,7 @@
-import { Item } from './item.dto';
+import { UpdateProductDto } from '../../products/dto/product.dto';
 
 export class CreateOrderDto {
-  items: Item[];
+  items: UpdateProductDto[];
   price: string;
   status: string;
   payment_status: string;
@@ -14,7 +14,7 @@ export class CreateOrderDto {
 
 export class UpdateOrderDto {
   _id: string;
-  items: Item[];
+  items: UpdateProductDto[];
   price: string;
   status: string;
   payment_status: string;

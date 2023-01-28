@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.configPath": ".prettierrc",
+  "prettier.prettierPath": ".prettierrc",
+  "prettier.trailingComma": "all",
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": true
+}

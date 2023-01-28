@@ -6,12 +6,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Order, OrderSchema } from './schema/orders.schema';
 import { OrdersRepository } from './orders.repository';
 import { EventsModule } from 'src/events/events.module';
+import { ProductsModule } from 'src/products/products.module';
 
 @Module({
   imports: [
     DatabaseModule,
     MongooseModule.forFeature([{ name: Order.name, schema: OrderSchema }]),
     forwardRef(() => EventsModule),
+    ProductsModule,
   ],
   controllers: [OrdersController],
   providers: [OrdersService, OrdersRepository],

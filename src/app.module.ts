@@ -12,6 +12,7 @@ import { LessonsModule } from './lessons/lessons.module';
 import { UsersModule } from './users/users.module';
 import { OrdersModule } from './orders/orders.module';
 import { EventsModule } from './events/events.module';
+import { ProductsModule } from './products/products.module';
 dotenv.config();
 
 @Module({
@@ -26,6 +27,7 @@ dotenv.config();
     UsersModule,
     OrdersModule,
     EventsModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
