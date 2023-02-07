@@ -58,11 +58,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], EventsGateway.prototype, "identity", null);
 EventsGateway = __decorate([
-    (0, websockets_1.WebSocketGateway)({
-        cors: {
-            origin: '*',
-        },
-    })
+    (0, websockets_1.WebSocketGateway)({ cors: '*:*' })
 ], EventsGateway);
 exports.EventsGateway = EventsGateway;
 //# sourceMappingURL=events.gateway.js.map
