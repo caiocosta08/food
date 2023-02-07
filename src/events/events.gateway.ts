@@ -35,6 +35,7 @@ export class EventsGateway {
   }
 
   async refreshProducts(products: any) {
+    console.log('refreshing...');
     this.server.emit('refresh_products', products);
     return true;
   }
